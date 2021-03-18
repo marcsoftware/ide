@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.FileNotFoundException;  
 import java.util.Scanner;
 import java.io.IOException;
+import java.io.FileWriter;  
 
 class WaterApp extends JFrame { 
   
@@ -33,6 +34,7 @@ class WaterApp extends JFrame {
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
                 System.out.println(data);
+                t1.setText(data); 
             }
 
             myReader.close();
@@ -41,6 +43,25 @@ class WaterApp extends JFrame {
             e.printStackTrace();
         }
     }
+
+    //---------------------------------------------------------
+    //
+    //---------------------------------------------------------
+    public static void saveFile(){
+
+            try {
+                FileWriter myWriter = new FileWriter("input.txt");
+                myWriter.write(t2.getText());
+                myWriter.close();
+                System.out.println("Successfully wrote to the file.");
+
+            } catch (IOException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
+
+    }   
+
 
     //---------------------------------------------------------
     //
@@ -94,5 +115,6 @@ class WaterApp extends JFrame {
 
 
         readFile();
+        saveFile();
     } 
 } 
