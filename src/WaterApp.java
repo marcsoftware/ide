@@ -1,6 +1,6 @@
 package src;
-// Java Program  to create a vertical  
-// JSplitPane to separate two text areas 
+
+
 import javax.swing.event.*; 
 import java.awt.*; 
 import javax.swing.*; 
@@ -10,6 +10,11 @@ import java.awt.FlowLayout;
 import javax.swing.JFrame;  
 import javax.swing.JScrollPane;  
 
+import java.io.File;  
+import java.io.FileNotFoundException;  
+import java.util.Scanner;
+import java.io.IOException;
+
 class WaterApp extends JFrame { 
   
     // frame 
@@ -17,7 +22,29 @@ class WaterApp extends JFrame {
   
     // text areas 
     static JTextArea t1, t2; 
-  
+
+    //---------------------------------------------------------
+    //
+    //---------------------------------------------------------
+    public static void readfile(){
+        try {
+            File myObj = new File("output.txt");
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                System.out.println(data);
+            }
+
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+    //---------------------------------------------------------
+    //
+    //---------------------------------------------------------
     // main class 
     public static void main(String[] args) 
     { 
@@ -66,5 +93,6 @@ class WaterApp extends JFrame {
     f.setExtendedState(f.getExtendedState() | JFrame.MAXIMIZED_BOTH);
 
 
+        readfile();
     } 
 } 
