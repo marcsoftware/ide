@@ -54,6 +54,12 @@ public class WaterApp extends JFrame implements ActionListener {
     }
  
     public static void main(String[] args) {
-        new WaterApp().setVisible(true);
+       // new WaterApp().setVisible(true);
+
+        
+        WaterApp myFrame = new WaterApp();
+        myFrame.setVisible(true);
+        myFrame.setExtendedState(myFrame.getExtendedState() | JFrame.MAXIMIZED_BOTH);
+    
     }
 }
