@@ -4,6 +4,12 @@ package src;
 import javax.swing.event.*; 
 import java.awt.*; 
 import javax.swing.*; 
+  
+
+import java.awt.FlowLayout;  
+import javax.swing.JFrame;  
+import javax.swing.JScrollPane;  
+
 class WaterApp extends JFrame { 
   
     // frame 
@@ -29,14 +35,17 @@ class WaterApp extends JFrame {
         // create text areas 
         t1 = new JTextArea(10, 10); 
         t2 = new JTextArea(10, 10); 
+
+  JScrollPane sp1 = new JScrollPane(t1); 
+  JScrollPane sp2 = new JScrollPane(t2); 
   
         // set texts 
         t1.setText("this is first text area"); 
         t2.setText("this is second text area"); 
   
         // add text area to panel 
-        p1.add(t1); 
-        p.add(t2); 
+        p1.add(sp1); 
+        p.add(sp2); 
   
         // create a splitpane 
         JSplitPane sl = new JSplitPane(SwingConstants.VERTICAL, p1, p); 
