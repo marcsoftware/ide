@@ -114,6 +114,28 @@ class WaterApp extends JFrame {
     //---------------------------------------------------------
     public static void runScript(){
             System.out.println("   runScript( )");
+
+
+                 Runtime run = Runtime.getRuntime();  
+        //The best possible I found is to construct a command which you want to execute  
+        //as a string and use that in exec. If the batch file takes command line arguments  
+        //the command can be constructed a array of strings and pass the array as input to  
+        //the exec method. The command can also be passed externally as input to the method.  
+
+        Process p = null;  
+        String cmd = "C:\\Users\\marc\\Desktop\\ide\\hello.cmd";  
+        try {  
+            p = run.exec(cmd);  
+            p.getErrorStream();  
+            System.out.println("RUN.COMPLETED.SUCCESSFULLY");  
+        }  
+        catch (IOException e) {  
+            e.printStackTrace();  
+            System.out.println("ERROR.RUNNING.CMD");  
+            p.destroy();  
+        }  
+       
+
     }
 
     //---------------------------------------------------------
