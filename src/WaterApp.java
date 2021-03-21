@@ -98,12 +98,12 @@ class WaterApp extends JFrame {
 
         //add button
        
-          JButton b=new JButton("Click Here");  
+          JButton b=new JButton("RUN");  
     b.setBounds(50,100,95,30);  
     b.addActionListener(new ActionListener(){  
                         public void actionPerformed(ActionEvent e){  
                                    // tf.setText("Welcome to Javatpoint.");  
-                                    System.out.println("event");
+                                    System.out.println("RUN CODE");
                                 }    
         });  
   
