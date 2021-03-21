@@ -176,6 +176,7 @@ class WaterApp extends JFrame {
                             System.out.println("save code and run script:");
                                     saveCode();
                                     runScript();
+                                    readOutputFile();
                                     
                                 }    
         });  
