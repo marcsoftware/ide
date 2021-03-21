@@ -50,7 +50,7 @@ class WaterApp extends JFrame {
 
 
     //---------------------------------------------------------
-    //
+    // read the output.txt file, which holds compiler&program output
     //---------------------------------------------------------
     public static void readOutputFile(){
         try {
@@ -91,6 +91,32 @@ class WaterApp extends JFrame {
 
 
     //---------------------------------------------------------
+    // saves the code that user writes in the textbox
+    //---------------------------------------------------------
+    public static void saveCode(){
+
+            try {
+                FileWriter myWriter = new FileWriter("input.txt");
+                myWriter.write(t2.getText());
+                myWriter.close();
+                System.out.println("   saveCode()");
+
+            } catch (IOException e) {
+                System.out.println("An error occurred.");
+                e.printStackTrace();
+            }
+
+    }   
+
+
+    //---------------------------------------------------------
+    //
+    //---------------------------------------------------------
+    public static void runScript(){
+            System.out.println("   runScript( )");
+    }
+
+    //---------------------------------------------------------
     //
     //---------------------------------------------------------
     // main class 
@@ -125,12 +151,15 @@ class WaterApp extends JFrame {
     b.addActionListener(new ActionListener(){  
                         public void actionPerformed(ActionEvent e){  
                                    // tf.setText("Welcome to Javatpoint.");  
-                                    System.out.println("RUN CODE");
+                            System.out.println("save code and run script:");
+                                    saveCode();
+                                    runScript();
+                                    
                                 }    
         });  
 
 
-           JButton buttonRefresh=new JButton("refresh");  
+           JButton buttonRefresh=new JButton("revert");  
     buttonRefresh.setBounds(50,100,95,30);  
     buttonRefresh.addActionListener(new ActionListener(){  
                         public void actionPerformed(ActionEvent e){  
