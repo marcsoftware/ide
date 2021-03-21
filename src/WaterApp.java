@@ -52,6 +52,28 @@ class WaterApp extends JFrame {
     //---------------------------------------------------------
     //
     //---------------------------------------------------------
+    public static void readOutputFile(){
+        try {
+            File myObj = new File("output.txt");
+            Scanner myReader = new Scanner(myObj);
+            while (myReader.hasNextLine()) {
+                String data = myReader.nextLine();
+                System.out.println(data);
+                t1.setText(data); 
+            }
+
+            myReader.close();
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
+
+
+
+    //---------------------------------------------------------
+    //
+    //---------------------------------------------------------
     public static void saveFile(){
 
             try {
@@ -116,11 +138,23 @@ class WaterApp extends JFrame {
                                     System.out.println("refresh CODE");
                                 }    
         }); 
+
+
+               JButton buttonReadOutput=new JButton("otuput.txt");  
+    buttonReadOutput.setBounds(50,100,95,30);  
+    buttonReadOutput.addActionListener(new ActionListener(){  
+                        public void actionPerformed(ActionEvent e){  
+                                   // tf.setText("Welcome to Javatpoint.");  
+                                    System.out.println("output.txt");
+                                    readOutputFile();
+                                }    
+        }); 
   
         // add text area to panel -----------------
         p1.add(sp1); 
         p1.add(b);
         p1.add(buttonRefresh);
+        p1.add(buttonReadOutput);
         p.add(sp2); 
   
         // create a splitpane 
