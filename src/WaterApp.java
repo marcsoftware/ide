@@ -106,10 +106,21 @@ class WaterApp extends JFrame {
                                     System.out.println("RUN CODE");
                                 }    
         });  
+
+
+           JButton buttonRefresh=new JButton("refresh");  
+    buttonRefresh.setBounds(50,100,95,30);  
+    buttonRefresh.addActionListener(new ActionListener(){  
+                        public void actionPerformed(ActionEvent e){  
+                                   // tf.setText("Welcome to Javatpoint.");  
+                                    System.out.println("refresh CODE");
+                                }    
+        }); 
   
         // add text area to panel -----------------
         p1.add(sp1); 
         p1.add(b);
+        p1.add(buttonRefresh);
         p.add(sp2); 
   
         // create a splitpane 
