@@ -16,6 +16,9 @@ import java.util.Scanner;
 import java.io.IOException;
 import java.io.FileWriter;  
 
+import java.awt.event.*;  
+import javax.swing.*;    
+
 class WaterApp extends JFrame { 
   
     // frame 
@@ -43,6 +46,8 @@ class WaterApp extends JFrame {
             e.printStackTrace();
         }
     }
+
+
 
     //---------------------------------------------------------
     //
@@ -90,9 +95,21 @@ class WaterApp extends JFrame {
         // set texts 
         t1.setText("this is first text area"); 
         t2.setText("this is second text area"); 
+
+        //add button
+       
+          JButton b=new JButton("Click Here");  
+    b.setBounds(50,100,95,30);  
+    b.addActionListener(new ActionListener(){  
+                        public void actionPerformed(ActionEvent e){  
+                                   // tf.setText("Welcome to Javatpoint.");  
+                                    System.out.println("event");
+                                }    
+        });  
   
-        // add text area to panel 
+        // add text area to panel -----------------
         p1.add(sp1); 
+        p1.add(b);
         p.add(sp2); 
   
         // create a splitpane 
