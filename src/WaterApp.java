@@ -30,9 +30,9 @@ class WaterApp extends JFrame {
     //---------------------------------------------------------
     //
     //---------------------------------------------------------
-    public static void readFile(){
+    public static void readFile(String filePath){
         try {
-            File myObj = new File("output.txt");
+            File myObj = new File(filePath);
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
@@ -228,7 +228,7 @@ class WaterApp extends JFrame {
     f.setExtendedState(f.getExtendedState() | JFrame.MAXIMIZED_BOTH);
 
 
-        readFile();
+        readFile("output.txt");
         saveFile();
     } 
 } 
