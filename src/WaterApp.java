@@ -25,7 +25,7 @@ class WaterApp extends JFrame {
     static JFrame f; 
   
     // text areas 
-    static JTextArea t1, t2; 
+    static JTextArea t1, t2Input; 
 
     //---------------------------------------------------------
     //
@@ -34,12 +34,12 @@ class WaterApp extends JFrame {
         try {
             File myObj = new File(filePath);
             Scanner myReader = new Scanner(myObj);
-            t2.setText(""); 
+            t2Input.setText(""); 
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
                 System.out.println(data);
                 
-                t2.append(data); 
+                t2Input.append(data); 
             }
 
             myReader.close();
@@ -80,7 +80,7 @@ class WaterApp extends JFrame {
 
             try {
                 FileWriter myWriter = new FileWriter(filePath);
-                myWriter.write(t2.getText());
+                myWriter.write(t2Input.getText());
                 myWriter.close();
                 System.out.println("Successfully wrote to the file.");
 
@@ -99,7 +99,7 @@ class WaterApp extends JFrame {
 
             try {
                 FileWriter myWriter = new FileWriter("input.txt");
-                myWriter.write(t2.getText());
+                myWriter.write(t2Input.getText());
                 myWriter.close();
                 System.out.println("   saveCode()");
 
@@ -159,14 +159,14 @@ class WaterApp extends JFrame {
   
         // create text areas 
         t1 = new JTextArea(40, 20); 
-        t2 = new JTextArea(40, 50); 
+        t2Input = new JTextArea(40, 50); 
 
   JScrollPane sp1 = new JScrollPane(t1); 
-  JScrollPane sp2 = new JScrollPane(t2); 
+  JScrollPane sp2 = new JScrollPane(t2Input); 
   
         // set texts 
-        t1.setText("this is first text area"); 
-        t2.setText("this is second text area"); 
+        t1.setText("!"); 
+        t2Input.setText(" !"); 
 
         //add button
        
