@@ -37,7 +37,7 @@ class WaterApp extends JFrame {
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
                 System.out.println(data);
-                t1.setText(data); 
+                t2.setText(data); 
             }
 
             myReader.close();
@@ -74,10 +74,10 @@ class WaterApp extends JFrame {
     //---------------------------------------------------------
     //
     //---------------------------------------------------------
-    public static void saveFile(){
+    public static void saveFile(String filePath){
 
             try {
-                FileWriter myWriter = new FileWriter("input.txt");
+                FileWriter myWriter = new FileWriter(filePath);
                 myWriter.write(t2.getText());
                 myWriter.close();
                 System.out.println("Successfully wrote to the file.");
@@ -157,7 +157,7 @@ class WaterApp extends JFrame {
   
         // create text areas 
         t1 = new JTextArea(40, 20); 
-        t2 = new JTextArea(40, 100); 
+        t2 = new JTextArea(40, 50); 
 
   JScrollPane sp1 = new JScrollPane(t1); 
   JScrollPane sp2 = new JScrollPane(t2); 
@@ -228,7 +228,11 @@ class WaterApp extends JFrame {
     f.setExtendedState(f.getExtendedState() | JFrame.MAXIMIZED_BOTH);
 
 
-        readFile("output.txt");
-        saveFile();
+
+        String target="C:\\Users\\marc\\Desktop\\ide\\study_material\\Executors1.java";
+        String target2="study_material\\Executors1.java";
+        //readFile("output.txt");
+        readFile(target2);
+        saveFile("input.txt");
     } 
 } 
