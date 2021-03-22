@@ -34,10 +34,12 @@ class WaterApp extends JFrame {
         try {
             File myObj = new File(filePath);
             Scanner myReader = new Scanner(myObj);
+            t2.setText(""); 
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
                 System.out.println(data);
-                t2.setText(data); 
+                
+                t2.append(data); 
             }
 
             myReader.close();
