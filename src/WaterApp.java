@@ -37,7 +37,7 @@ class WaterApp extends JFrame {
             t2Input.setText(""); 
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                System.out.println(data);
+                
                 
                 t2Input.append(data+"\n"); 
             }
@@ -60,7 +60,7 @@ class WaterApp extends JFrame {
             Scanner myReader = new Scanner(myObj);
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
-                System.out.println(data);
+                
                 t1.setText(data+"\n"); 
             }
 
