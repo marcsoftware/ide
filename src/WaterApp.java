@@ -233,9 +233,9 @@ class WaterApp extends JFrame {
     f.setExtendedState(f.getExtendedState() | JFrame.MAXIMIZED_BOTH);
 
 
-
-        String target="C:\\Users\\marc\\Desktop\\ide\\study_material\\Executors1.java";
-        String target2="study_material\\Executors1.java";
+        String filename="harcoded.java";//NOT USED
+        String target="C:\\Users\\marc\\Desktop\\ide\\study_material\\harcoded.java";
+        String target2="study_material\\harcoded.java";
         //readFile("output.txt");
         readFile(target2);
         saveFile("input.txt");
