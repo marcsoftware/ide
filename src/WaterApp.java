@@ -115,6 +115,8 @@ class WaterApp extends JFrame {
     //
     //---------------------------------------------------------
     public static void runScript(){
+
+         //TODO copy to folder with cutomName
             System.out.println("   runScript( )");
 
 
