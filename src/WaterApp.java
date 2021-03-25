@@ -61,7 +61,7 @@ class WaterApp extends JFrame {
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
                 
-                t1.setText(data+"\n"); 
+                t1.append(data+"\n"); 
             }
 
             myReader.close();

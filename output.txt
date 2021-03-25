@@ -1,3 +1,7 @@
-attempt to shutdown executor
-task finished: pool-1-thread-1
-shutdown finished
+src\harcoded.java:8: error: class hardcoded is public, should be declared in a file named hardcoded.java
+public class hardcoded {
+       ^
+src\hardcoded.java:8: error: duplicate class: src.hardcoded
+public class hardcoded {
+       ^
+2 errors
