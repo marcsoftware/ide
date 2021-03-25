@@ -58,6 +58,7 @@ class WaterApp extends JFrame {
         try {
             File myObj = new File("output.txt");
             Scanner myReader = new Scanner(myObj);
+            t1.setText(""); 
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
                 
@@ -117,7 +118,7 @@ class WaterApp extends JFrame {
     public static void runScript(){
 
          //TODO copy to folder with cutomName
-        saveFile("live/src/harcoded.java");
+        saveFile("live/src/hardcoded.java");
             System.out.println("   runScript( )");
 
 
@@ -233,7 +234,7 @@ class WaterApp extends JFrame {
     f.setExtendedState(f.getExtendedState() | JFrame.MAXIMIZED_BOTH);
 
 
-        String filename="harcoded.java";//NOT USED
+        String filename="hardcoded.java";//NOT USED
         String target="C:\\Users\\marc\\Desktop\\ide\\study_material\\hardcoded.java";
         String target2="study_material\\hardcoded.java";
         //readFile("output.txt");
