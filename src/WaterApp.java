@@ -234,8 +234,8 @@ class WaterApp extends JFrame {
 
 
         String filename="harcoded.java";//NOT USED
-        String target="C:\\Users\\marc\\Desktop\\ide\\study_material\\harcoded.java";
-        String target2="study_material\\harcoded.java";
+        String target="C:\\Users\\marc\\Desktop\\ide\\study_material\\hardcoded.java";
+        String target2="study_material\\hardcoded.java";
         //readFile("output.txt");
         readFile(target2);
         saveFile("input.txt");
