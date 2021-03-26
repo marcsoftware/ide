@@ -137,7 +137,7 @@ class WaterApp extends JFrame {
 
          //TODO copy to folder with cutomName
         String target = "live\\src\\hardcoded.java";
-        createFile(target);
+        createFile("live\\src\\hardcoded.java");
         saveFile(target);
             
 
