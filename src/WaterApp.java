@@ -83,7 +83,7 @@ class WaterApp extends JFrame {
                 FileWriter myWriter = new FileWriter(filePath);
                 myWriter.write(t2Input.getText());
                 myWriter.close();
-                System.out.println("Successfully wrote to the file.");
+                
 
             } catch (IOException e) {
                 System.out.println("An error occurred.");
@@ -102,7 +102,7 @@ class WaterApp extends JFrame {
                 FileWriter myWriter = new FileWriter("input.txt");
                 myWriter.write(t2Input.getText());
                 myWriter.close();
-                System.out.println("   saveCode()");
+                
 
             } catch (IOException e) {
                 System.out.println("An error occurred.");
@@ -112,14 +112,34 @@ class WaterApp extends JFrame {
     }   
 
 
+
+    //---------------------------------------------------------
+    //
+    //---------------------------------------------------------
+     public static void createFile(String newFileName) {
+        try {
+          File myObj = new File(newFileName);
+          if (myObj.createNewFile()) {
+            System.out.println("File created: " + myObj.getName());
+          } else {
+            System.out.println("File already exists.");
+          }
+        } catch (IOException e) {
+          System.out.println("FILE NOT CREATED ->An error occurred.");
+          e.printStackTrace();
+        }
+    }
+
     //---------------------------------------------------------
     //
     //---------------------------------------------------------
     public static void runScript(){
 
          //TODO copy to folder with cutomName
-        saveFile("live\\src\\hardcoded.java");
-            System.out.println("   runScript( )");
+        String target = "live\\src\\hardcoded.java";
+        createFile(target);
+        saveFile(target);
+            
 
 
                  Runtime run = Runtime.getRuntime();  
@@ -133,7 +153,7 @@ class WaterApp extends JFrame {
         try {  
             p = run.exec(cmd);  
             p.getErrorStream();  
-            System.out.println("RUN.COMPLETED.SUCCESSFULLY");  
+            
         }  
         catch (IOException e) {  
             e.printStackTrace();  
@@ -179,7 +199,7 @@ class WaterApp extends JFrame {
     b.addActionListener(new ActionListener(){  
                         public void actionPerformed(ActionEvent e){  
                                    // tf.setText("Welcome to Javatpoint.");  
-                            System.out.println("save code and run script:");
+                            
                                     saveCode();
                                     runScript();
                                     readOutputFile();
@@ -193,7 +213,7 @@ class WaterApp extends JFrame {
     buttonRefresh.addActionListener(new ActionListener(){  
                         public void actionPerformed(ActionEvent e){  
                                    // tf.setText("Welcome to Javatpoint.");  
-                                    System.out.println("refresh CODE");
+                                    
                                 }    
         }); 
 
@@ -203,7 +223,7 @@ class WaterApp extends JFrame {
     buttonReadOutput.addActionListener(new ActionListener(){  
                         public void actionPerformed(ActionEvent e){  
                                    // tf.setText("Welcome to Javatpoint.");  
-                                    System.out.println("output.txt");
+                                    
                                     readOutputFile();
                                 }    
         }); 
