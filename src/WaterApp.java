@@ -119,6 +119,7 @@ class WaterApp extends JFrame {
      public static void createFile(String newFileName) {
         try {
           File myObj = new File(newFileName);
+          myObj.mkdirs();
           if (myObj.createNewFile()) {
             System.out.println("File created: " + myObj.getName());
           } else {
