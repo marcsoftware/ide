@@ -27,6 +27,8 @@ class WaterApp extends JFrame {
     // text areas 
     static JTextArea t1, t2Input; 
 
+
+
     //---------------------------------------------------------
     //
     //---------------------------------------------------------
@@ -116,10 +118,11 @@ class WaterApp extends JFrame {
     //---------------------------------------------------------
     //
     //---------------------------------------------------------
-     public static void createFile(String newFileName) {
+     public static void createFile(String newFileName,String folderName) {
         try {
           File myObj = new File(newFileName);
-          myObj.mkdirs();
+          File myFolder = new File(folderName);
+          myFolder.mkdirs();
           if (myObj.createNewFile()) {
             System.out.println("File created: " + myObj.getName());
           } else {
@@ -138,7 +141,7 @@ class WaterApp extends JFrame {
 
          //TODO copy to folder with cutomName
         String target = "live\\src\\hardcoded.java";
-        createFile("live\\src\\hardcoded.java");
+        createFile("hardcoded.java","live\\src");
         saveFile(target);
             
 
