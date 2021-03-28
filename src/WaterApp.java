@@ -128,7 +128,8 @@ class WaterApp extends JFrame {
  public static void findClassName( String code ) {
       // String to be scanned to find the pattern.
       String line =code;
-      String pattern = "(.*)(\\d+)(.*)";
+      //class\s+(.*)\s+{
+      String pattern = "class\\s+(.*)\\s+\\{";
 
       // Create a Pattern object
       Pattern r = Pattern.compile(pattern);
@@ -136,9 +137,9 @@ class WaterApp extends JFrame {
       // Now create matcher object.
       Matcher m = r.matcher(line);
       if (m.find( )) {
-         System.out.println("Found value: " + m.group(0) );
-         System.out.println("Found value: " + m.group(1) );
-         System.out.println("Found value: " + m.group(2) );
+         System.out.println("Found value: " + m.group(1) ); // this is the class name that user wrote
+         
+         
       }else {
          System.out.println("NO MATCH");
       }
