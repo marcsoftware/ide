@@ -139,7 +139,7 @@ class WaterApp extends JFrame {
       if (m.find( )) {
          System.out.println("Found value: " + m.group(1) ); // this is the class name that user wrote
          
-         
+         className=m.group(1);
       }else {
          System.out.println("NO MATCH");
       }
@@ -183,7 +183,7 @@ class WaterApp extends JFrame {
         //the exec method. The command can also be passed externally as input to the method.  
 
         Process p = null;  
-        String cmd = "C:\\Users\\marc\\Desktop\\ide\\hello.cmd hardcoded";  
+        String cmd = "C:\\Users\\marc\\Desktop\\ide\\hello.cmd "+className;  
         try {  
             p = run.exec(cmd);  
             p.getErrorStream();  
