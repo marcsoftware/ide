@@ -1,4 +1,3 @@
-src\hardcoded.java:8: error: class harddcoded is public, should be declared in a file named harddcoded.java
-public class harddcoded {
-       ^
-1 error
+attempt to shutdown executor
+task finished: pool-1-thread-1
+shutdown finished
