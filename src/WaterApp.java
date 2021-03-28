@@ -19,6 +19,9 @@ import java.io.FileWriter;
 import java.awt.event.*;  
 import javax.swing.*;    
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 class WaterApp extends JFrame { 
   
     // frame 
@@ -27,7 +30,7 @@ class WaterApp extends JFrame {
     // text areas 
     static JTextArea t1, t2Input; 
 
-
+     static String className=""; // file name has to match the class name the user wrote.
 
     //---------------------------------------------------------
     //
@@ -102,6 +105,11 @@ class WaterApp extends JFrame {
 
             try {
                 FileWriter myWriter = new FileWriter("input.txt");
+                
+                // find class name that user wrote
+                findClassName(t2Input.getText());
+
+
                 myWriter.write(t2Input.getText());
                 myWriter.close();
                 
@@ -114,6 +122,27 @@ class WaterApp extends JFrame {
     }   
 
 
+    //---------------------------------------------------------
+    //
+    //---------------------------------------------------------
+ public static void findClassName( String code ) {
+      // String to be scanned to find the pattern.
+      String line =code;
+      String pattern = "(.*)(\\d+)(.*)";
+
+      // Create a Pattern object
+      Pattern r = Pattern.compile(pattern);
+
+      // Now create matcher object.
+      Matcher m = r.matcher(line);
+      if (m.find( )) {
+         System.out.println("Found value: " + m.group(0) );
+         System.out.println("Found value: " + m.group(1) );
+         System.out.println("Found value: " + m.group(2) );
+      }else {
+         System.out.println("NO MATCH");
+      }
+   }
 
     //---------------------------------------------------------
     //
