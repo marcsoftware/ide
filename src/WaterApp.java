@@ -153,7 +153,7 @@ class WaterApp extends JFrame {
         //the exec method. The command can also be passed externally as input to the method.  
 
         Process p = null;  
-        String cmd = "C:\\Users\\marc\\Desktop\\ide\\hello.cmd";  
+        String cmd = "C:\\Users\\marc\\Desktop\\ide\\hello.cmd hardcoded";  
         try {  
             p = run.exec(cmd);  
             p.getErrorStream();  
