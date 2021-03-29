@@ -80,7 +80,7 @@ class WaterApp extends JFrame {
 
 
     //---------------------------------------------------------
-    //
+    // saves the users-code to filePath
     //---------------------------------------------------------
     public static void saveFile(String filePath){
 
@@ -150,7 +150,7 @@ class WaterApp extends JFrame {
     //---------------------------------------------------------
      public static void createFile(String newFileName,String folderName) {
         try {
-          File myObj = new File(newFileName);
+          File myObj = new File(folderName+"//"+newFileName);
           File myFolder = new File(folderName);
           myFolder.mkdirs();
           if (myObj.createNewFile()) {
@@ -290,8 +290,8 @@ class WaterApp extends JFrame {
     f.setExtendedState(f.getExtendedState() | JFrame.MAXIMIZED_BOTH);
 
 
-        String filename="hardcoded.java";//NOT USED
-        String target="C:\\Users\\marc\\Desktop\\ide\\study_material\\hardcoded.java";
+        
+        
         String target2="study_material\\hardcoded.java";
         //readFile("output.txt");
         readFile(target2);
