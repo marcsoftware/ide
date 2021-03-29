@@ -200,6 +200,26 @@ class WaterApp extends JFrame {
 
     }
 
+
+    //---------------------------------------------------------
+    //
+    //---------------------------------------------------------
+    public static void refreshOutput() throws Exception{
+        ActionListener taskPerformer = new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+                //...Perform a task...
+                readOutputFile();
+                System.out.println("Reading SMTP Info.");
+            }
+        };
+        Timer timer = new Timer(100 ,taskPerformer);
+        timer.setRepeats(true);
+        timer.start();
+
+        Thread.sleep(5000);
+    }
+
+
     //---------------------------------------------------------
     //
     //---------------------------------------------------------
@@ -296,5 +316,11 @@ class WaterApp extends JFrame {
         //readFile("output.txt");
         readFile(target2);
         saveFile("input.txt");
+
+       try{
+        refreshOutput();
+        }catch(Exception  e){
+
+        }
     } 
 } 

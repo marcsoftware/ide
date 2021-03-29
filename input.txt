@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 
-public class hardsdfacoded {
+public class hardcoded {
 
     public static void main(String[] args) {
         test1(3);
