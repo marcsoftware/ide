@@ -283,6 +283,15 @@ class WaterApp extends JFrame {
                                     readOutputFile();
                                 }    
         }); 
+
+    // make drop down menu
+    String[] petStrings = { "Bird", "Cat", "Dog", "Rabbit", "Pig" };
+
+    //Create the combo box, select item at index 4.
+    //Indices start at 0, so 4 specifies the pig.
+    JComboBox petList = new JComboBox(petStrings);
+    petList.setSelectedIndex(4);
+    //petList.addActionListener(this);
   
         // add text area to panel -----------------
         p1.add(sp1); 
@@ -290,6 +299,7 @@ class WaterApp extends JFrame {
         p1.add(buttonRefresh);
         p1.add(buttonReadOutput);
         p.add(sp2); 
+        p.add(petList); 
   
         // create a splitpane 
         JSplitPane sl = new JSplitPane(SwingConstants.VERTICAL, p1, p); 
