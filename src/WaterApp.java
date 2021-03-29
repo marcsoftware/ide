@@ -285,12 +285,12 @@ class WaterApp extends JFrame {
         }); 
 
     // make drop down menu
-    String[] petStrings = { "Bird", "Cat", "Dog", "Rabbit", "Pig" };
+    String[] petStrings = "a,b".split(",");
 
     //Create the combo box, select item at index 4.
     //Indices start at 0, so 4 specifies the pig.
     JComboBox petList = new JComboBox(petStrings);
-    petList.setSelectedIndex(4);
+    petList.setSelectedIndex(0);
     //petList.addActionListener(this);
   
         // add text area to panel -----------------
