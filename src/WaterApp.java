@@ -209,7 +209,7 @@ class WaterApp extends JFrame {
             public void actionPerformed(ActionEvent evt) {
                 //...Perform a task...
                 readOutputFile();
-                System.out.println("Reading SMTP Info.");
+                
             }
         };
         Timer timer = new Timer(100 ,taskPerformer);
@@ -288,32 +288,13 @@ class WaterApp extends JFrame {
 
     /*
 
-    Atomic1.java
-CompletableFuture1.java
-ConcurrentHashMap1.java
-ConcurrentUtils.java
-Executors1.java
-Executors2.java
-Executors3.java
-Lock1.java
-Lock2.java
-Lock3.java
-Lock4.java
-Lock5.java
-Lock6.java
-LongAccumulator1.java
-LongAdder1.java
-Semaphore1.java
-Semaphore2.java
-Synchronized1.java
-Synchronized2.java
-Threads1.java
-giant.txt
-hardcoded.java
+Atomic1.java CompletableFuture1.java ConcurrentHashMap1.java ConcurrentUtils.java Executors1.java Executors2.java Executors3.java Lock1.java Lock2.java Lock3.java Lock4.java Lock5.java Lock6.java LongAccumulator1.java LongAdder1.java Semaphore1.java Semaphore2.java Synchronized1.java Synchronized2.java Threads1.java giant.txt hardcoded.java
 
 
     */
-    String[] petStrings = "a,b".split("\n");
+
+
+    String[] petStrings = "Atomic1.java CompletableFuture1.java ConcurrentHashMap1.java ConcurrentUtils.java Executors1.java Executors2.java Executors3.java Lock1.java Lock2.java Lock3.java Lock4.java Lock5.java Lock6.java LongAccumulator1.java LongAdder1.java Semaphore1.java Semaphore2.java Synchronized1.java Synchronized2.java Threads1.java giant.txt hardcoded.java".split(" ");
 
     //Create the combo box, select item at index 4.
     //Indices start at 0, so 4 specifies the pig.
