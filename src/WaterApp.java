@@ -56,6 +56,9 @@ class WaterApp extends JFrame {
 
 
 
+
+
+
     //---------------------------------------------------------
     // read the output.txt file, which holds compiler&program output
     //---------------------------------------------------------
@@ -300,7 +303,12 @@ Atomic1.java CompletableFuture1.java ConcurrentHashMap1.java ConcurrentUtils.jav
     //Indices start at 0, so 4 specifies the pig.
     JComboBox petList = new JComboBox(petStrings);
     petList.setSelectedIndex(0);
-    //petList.addActionListener(this);
+    
+    petList.addActionListener (new ActionListener () {
+        public void actionPerformed(ActionEvent e) {
+            readFile("study_material\\"+"Threads1.java");
+        }
+    });
   
         // add text area to panel -----------------
         p1.add(sp1); 
