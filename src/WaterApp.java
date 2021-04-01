@@ -39,7 +39,7 @@ class WaterApp extends JFrame {
         try {
             File myObj = new File(filePath);
             Scanner myReader = new Scanner(myObj);
-            t2Input.setText(""); 
+            t2Input.setText("package src;\n"); 
             while (myReader.hasNextLine()) {
                 String data = myReader.nextLine();
                 
