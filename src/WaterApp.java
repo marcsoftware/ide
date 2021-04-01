@@ -241,8 +241,8 @@ class WaterApp extends JFrame {
         JPanel p = new JPanel(); 
   
         // create text areas 
-        t1 = new JTextArea(40, 20); 
-        t2Input = new JTextArea(40, 50); 
+        t1 = new JTextArea(40, 50); 
+        t2Input = new JTextArea(40, 60); 
 
   JScrollPane sp1 = new JScrollPane(t1); 
   JScrollPane sp2 = new JScrollPane(t2Input); 
