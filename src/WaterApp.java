@@ -306,7 +306,10 @@ Atomic1.java CompletableFuture1.java ConcurrentHashMap1.java ConcurrentUtils.jav
     
     petList.addActionListener (new ActionListener () {
         public void actionPerformed(ActionEvent e) {
-            readFile("study_material\\"+"Threads1.java");
+           //String item="Threads1.java";
+             JComboBox cb = (JComboBox)e.getSource();
+        String item = (String)cb.getSelectedItem();
+            readFile("study_material\\"+item);
         }
     });
   
