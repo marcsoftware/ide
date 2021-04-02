@@ -32,6 +32,7 @@ class WaterApp extends JFrame {
 
      static String className=""; // file name has to match the class name the user wrote.
 
+static String selectedFile="Atomic1.java";
     //---------------------------------------------------------
     //
     //---------------------------------------------------------
@@ -267,11 +268,11 @@ class WaterApp extends JFrame {
         });  
 
 
-           JButton buttonRefresh=new JButton("revert");  
+           JButton buttonRefresh=new JButton("refresh");  
     buttonRefresh.setBounds(50,100,95,30);  
     buttonRefresh.addActionListener(new ActionListener(){  
                         public void actionPerformed(ActionEvent e){  
-                                   // tf.setText("Welcome to Javatpoint.");  
+                                   readFile(selectedFile);
                                     
                                 }    
         }); 
@@ -309,17 +310,19 @@ Atomic1.java CompletableFuture1.java ConcurrentHashMap1.java ConcurrentUtils.jav
            //String item="Threads1.java";
              JComboBox cb = (JComboBox)e.getSource();
         String item = (String)cb.getSelectedItem();
-            readFile("study_material\\"+item);
+           selectedFile="study_material\\"+item;//global
+            readFile(selectedFile);
         }
     });
   
         // add text area to panel -----------------
         p1.add(sp1); 
         p1.add(b);
-        p1.add(buttonRefresh);
+        
         p1.add(buttonReadOutput);
         p.add(sp2); 
         p.add(petList); 
+        p.add(buttonRefresh);
   
         // create a splitpane 
         JSplitPane sl = new JSplitPane(SwingConstants.VERTICAL, p1, p); 
