@@ -1,48 +1,76 @@
 package src;
-package src;
 
+
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
 import java.util.concurrent.TimeUnit;
+import java.util.concurrent.TimeoutException;
 
 
-public class hardcoded {
+public class Executors2 {
 
-    public static void main(String[] args) {
-        test1(3);
-//        test1(7);
+    public static void main(String[] args) throws ExecutionException, InterruptedException, TimeoutException {
+//        test1();
+//        test2();
+        test3();
     }
 
-    private static void test1(long seconds) {
-        ExecutorService executor = Executors.newSingleThreadExecutor();
-        executor.submit(() -> {
+    private static void test3() throws InterruptedException, ExecutionException, TimeoutException {
+        ExecutorService executor = Executors.newFixedThreadPool(1);
+
+        Future<Integer> future = executor.submit(() -> {
             try {
-                TimeUnit.SECONDS.sleep(seconds);
-                String name = Thread.currentThread().getName();
-                System.out.println("task finished: " + name);
+                TimeUnit.SECONDS.sleep(2);
+                return 123;
             }
             catch (InterruptedException e) {
-                System.err.println("task interrupted");
+                throw new IllegalStateException("task interrupted", e);
             }
         });
-        stop(executor);
+
+        future.get(1, TimeUnit.SECONDS);
     }
 
-    static void stop(ExecutorService executor) {
-        try {
-            System.out.println("attempt to shutdown executor");
-            executor.shutdown();
-            executor.awaitTermination(5, TimeUnit.SECONDS);
-        }
-        catch (InterruptedException e) {
-            System.err.println("termination interrupted");
-        }
-        finally {
-            if (!executor.isTerminated()) {
-                System.err.println("killing non-finished tasks");
+    private static void test2() throws InterruptedException, ExecutionException {
+        ExecutorService executor = Executors.newFixedThreadPool(1);
+
+        Future<Integer> future = executor.submit(() -> {
+            try {
+                TimeUnit.SECONDS.sleep(1);
+                return 123;
             }
-            executor.shutdownNow();
-            System.out.println("shutdown finished");
-        }
+            catch (InterruptedException e) {
+                throw new IllegalStateException("task interrupted", e);
+            }
+        });
+
+        executor.shutdownNow();
+        future.get();
     }
+
+    private static void test1() throws InterruptedException, ExecutionException {
+        ExecutorService executor = Executors.newFixedThreadPool(1);
+
+        Future<Integer> future = executor.submit(() -> {
+            try {
+                TimeUnit.SECONDS.sleep(1);
+                return 123;
+            }
+            catch (InterruptedException e) {
+                throw new IllegalStateException("task interrupted", e);
+            }
+        });
+
+        System.out.println("future done: " + future.isDone());
+
+        Integer result = future.get();
+
+        System.out.println("future done: " + future.isDone());
+        System.out.print("result: " + result);
+
+        executor.shutdownNow();
+    }
+
 }
