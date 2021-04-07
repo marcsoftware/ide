@@ -33,7 +33,7 @@ class WaterApp extends JFrame {
      static String className=""; // file name has to match the class name the user wrote.
 
 static String selectedFile="Atomic1.java";
-static String output="output.txt";
+static String output="output\\output.txt";
     //---------------------------------------------------------
     //
     //---------------------------------------------------------
