@@ -173,10 +173,18 @@ static String output="output\\output.txt";
     }
 
     //---------------------------------------------------------
+    // the output.txt file sometimes gets locked by a process.
+    // so this function randomly changes the output file.
+    //---------------------------------------------------------
+    public static void changeOutputFile(){
+    }
+
+    //---------------------------------------------------------
     //
     //---------------------------------------------------------
     public static void runScript(){
 
+        changeOutputFile();
          //TODO copy to folder with cutomName
         String folder = "live\\src\\";
         String file= className+".java";
