@@ -185,7 +185,7 @@ static String output="output\\output.txt";
             salt.append(SALTCHARS.charAt(index));
         }
         String saltStr = salt.toString();
-        outputFile= saltStr;
+        outputFile= saltStr+".txt";
     }
 
     //---------------------------------------------------------
