@@ -33,6 +33,9 @@ class WaterApp extends JFrame {
      static String className=""; // file name has to match the class name the user wrote.
 
 static String selectedFile="Atomic1.java";
+
+static String outputFolder="output\\";
+static String outputFile="output.txt";
 static String output="output\\output.txt";
     //---------------------------------------------------------
     //
@@ -66,7 +69,7 @@ static String output="output\\output.txt";
     //---------------------------------------------------------
     public static void readOutputFile(){
         try {
-            File myObj = new File(output);
+            File myObj = new File(outputFolder+outputFile);
             Scanner myReader = new Scanner(myObj);
             t1.setText(""); 
             while (myReader.hasNextLine()) {
@@ -190,7 +193,7 @@ static String output="output\\output.txt";
         //the exec method. The command can also be passed externally as input to the method.  
 
         Process p = null;  
-        String cmd = "C:\\Users\\marc\\Desktop\\ide\\hello.cmd "+className+" "+output;  
+        String cmd = "C:\\Users\\marc\\Desktop\\ide\\hello.cmd "+className+" "+outputFolder+outputFile;  
         try {  
             p = run.exec(cmd);  
             p.getErrorStream();  
