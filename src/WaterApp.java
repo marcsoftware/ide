@@ -1,6 +1,6 @@
 package src;
 
-
+import java.util.Random;
 import javax.swing.event.*; 
 import java.awt.*; 
 import javax.swing.*; 
@@ -54,7 +54,7 @@ static String output="output\\output.txt";
 
             myReader.close();
         } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
+            System.out.println(" 57 An error occurred.");
             e.printStackTrace();
         }
     }
@@ -80,7 +80,7 @@ static String output="output\\output.txt";
 
             myReader.close();
         } catch (FileNotFoundException e) {
-            System.out.println("An error occurred.");
+            System.out.println("83 An error occurred.");
             e.printStackTrace();
         }
     }
@@ -99,7 +99,7 @@ static String output="output\\output.txt";
                 
 
             } catch (IOException e) {
-                System.out.println("An error occurred.");
+                System.out.println("102 An error occurred.");
                 e.printStackTrace();
             }
 
@@ -123,7 +123,7 @@ static String output="output\\output.txt";
                 
 
             } catch (IOException e) {
-                System.out.println("An error occurred.");
+                System.out.println("126 An error occurred.");
                 e.printStackTrace();
             }
 
@@ -177,6 +177,15 @@ static String output="output\\output.txt";
     // so this function randomly changes the output file.
     //---------------------------------------------------------
     public static void changeOutputFile(){
+         String SALTCHARS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890";
+        StringBuilder salt = new StringBuilder();
+        Random rnd = new Random();
+        while (salt.length() < 18) { // length of the random string.
+            int index = (int) (rnd.nextFloat() * SALTCHARS.length());
+            salt.append(SALTCHARS.charAt(index));
+        }
+        String saltStr = salt.toString();
+        outputFile= saltStr;
     }
 
     //---------------------------------------------------------
