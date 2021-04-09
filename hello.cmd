@@ -1,5 +1,5 @@
 cd live
-del /f src\*.class
+del /f src\%1.class
 echo empty > ../output.txt
 
 javac -d . src/%1.java 2> ../%2
