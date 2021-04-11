@@ -80,7 +80,7 @@ static String output="output\\output.txt";
 
             myReader.close();
         } catch (FileNotFoundException e) {
-            System.out.println("83 An error occurred.");
+            System.out.println("83 File does not exsist yet");
             e.printStackTrace();
         }
     }

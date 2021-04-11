@@ -2,43 +2,33 @@ package src;
 
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
-import java.util.concurrent.locks.ReentrantLock;
-import java.util.stream.IntStream;
+import java.util.concurrent.TimeUnit;
 
 
-public class Lock1 {
+public class ConcurrentUtils {
 
-    private static final int NUM_INCREMENTS = 10000;
-
-    private static ReentrantLock lock = new ReentrantLock();
-
-    private static int count = 0;
-
-    private static void increment() {
-        lock.lock();
+    public static void stop(ExecutorService executor) {
         try {
-            count++;
-        } finally {
-            lock.unlock();
+            executor.shutdown();
+            executor.awaitTermination(60, TimeUnit.SECONDS);
+        }
+        catch (InterruptedException e) {
+            System.err.println("termination interrupted");
+        }
+        finally {
+            if (!executor.isTerminated()) {
+                System.err.println("killing non-finished tasks");
+            }
+            executor.shutdownNow();
         }
     }
 
-    public static void main(String[] args) {
-        testLock();
-    }
-
-    private static void testLock() {
-        count = 0;
-
-        ExecutorService executor = Executors.newFixedThreadPool(2);
-
-        IntStream.range(0, NUM_INCREMENTS)
-                 .forEach(i -> executor.submit(Lock1::increment));
-
-        ConcurrentUtils.stop(executor);
-
-        System.out.println(count);
+    public static void sleep(int seconds) {
+        try {
+            TimeUnit.SECONDS.sleep(seconds);
+        } catch (InterruptedException e) {
+            throw new IllegalStateException(e);
+        }
     }
 
 }
