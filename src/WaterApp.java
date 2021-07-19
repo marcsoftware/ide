@@ -210,7 +210,7 @@ static String output="output\\output.txt";
         //the exec method. The command can also be passed externally as input to the method.  
 
         Process p = null;  
-        String cmd = "C:\\Users\\marc\\Desktop\\ide\\hello.cmd "+className+" "+outputFolder+outputFile;  
+        String cmd = "C:\\Users\\marc\\work\\ide\\hello.cmd "+className+" "+outputFolder+outputFile;  
         try {  
             p = run.exec(cmd);  
             p.getErrorStream();  

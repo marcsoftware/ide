@@ -1,6 +1,0 @@
-src\Lock1.java:39: error: cannot find symbol
-        ConcurrentUtils.stop(executor);
-        ^
-  symbol:   variable ConcurrentUtils
-  location: class Lock1
-1 error

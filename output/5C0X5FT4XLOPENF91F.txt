@@ -1,6 +1,0 @@
-src\LongAccumulator1.java:25: error: cannot find symbol
-        ConcurrentUtils.stop(executor);
-        ^
-  symbol:   variable ConcurrentUtils
-  location: class LongAccumulator1
-1 error

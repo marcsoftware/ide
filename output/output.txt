@@ -1,4 +1,0 @@
-src\hardcoded.java:2: error: class, interface, or enum expected
-package src;
-^
-1 error

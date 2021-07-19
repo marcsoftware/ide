@@ -1,2 +1,0 @@
-Remaining Delay: 1660ms
-Scheduling: 276553563960000
