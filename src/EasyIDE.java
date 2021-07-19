@@ -22,7 +22,7 @@ import javax.swing.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-class WaterApp extends JFrame { 
+class EasyIDE extends JFrame { 
   
     // frame 
     static JFrame f; 
@@ -256,7 +256,7 @@ static String output="output\\output.txt";
 
   
         // create a object 
-        WaterApp s = new WaterApp(); 
+        EasyIDE s = new EasyIDE(); 
   
         // create a panel 
         JPanel p1 = new JPanel(); 

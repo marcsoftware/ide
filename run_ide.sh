@@ -1,2 +1,3 @@
-javac src/WaterApp.java
-java -classpath . src.WaterApp
+del /f src\*.class
+javac src/EasyIDE.java
+java -classpath . src.EasyIDE
