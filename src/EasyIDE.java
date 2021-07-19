@@ -366,7 +366,7 @@ Atomic1.java CompletableFuture1.java ConcurrentHashMap1.java ConcurrentUtils.jav
 
         
         
-        String target2="study_material\\hardcoded.java";
+        String target2="study_material\\Atomic1.java";
         //readFile("output.txt");
         readFile(target2);
         saveFile("input.txt");
