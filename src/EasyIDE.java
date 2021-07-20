@@ -346,10 +346,10 @@ Atomic1.java CompletableFuture1.java ConcurrentHashMap1.java ConcurrentUtils.jav
         p.add(buttonRefresh);
   
         // create a splitpane 
-        JSplitPane sl = new JSplitPane(SwingConstants.VERTICAL, p1, p); 
+        JSplitPane sl = new JSplitPane(SwingConstants.HORIZONTAL, p1, p); 
   
         // set Orientation for slider 
-        sl.setOrientation(SwingConstants.VERTICAL); 
+        sl.setOrientation(SwingConstants.HORIZONTAL); 
   
         // add panel 
         f.add(sl); 
