@@ -263,7 +263,7 @@ static String output="output\\output.txt";
         JPanel p = new JPanel(); 
   
         // create text areas 
-        t1 = new JTextArea(40, 50); 
+        t1 = new JTextArea(10, 100); 
         t2Input = new JTextArea(40, 60); 
 
   JScrollPane sp1 = new JScrollPane(t1); 
@@ -337,16 +337,18 @@ Atomic1.java CompletableFuture1.java ConcurrentHashMap1.java ConcurrentUtils.jav
     });
   
         // add text area to panel -----------------
+        p.add(sp2); 
         p1.add(sp1); 
+        
         p1.add(b);
         
         p1.add(buttonReadOutput);
-        p.add(sp2); 
+        
         p.add(petList); 
         p.add(buttonRefresh);
   
         // create a splitpane 
-        JSplitPane sl = new JSplitPane(SwingConstants.HORIZONTAL, p1, p); 
+        JSplitPane sl = new JSplitPane(SwingConstants.HORIZONTAL, p, p1); 
   
         // set Orientation for slider 
         sl.setOrientation(SwingConstants.HORIZONTAL); 
